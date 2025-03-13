@@ -17,8 +17,7 @@ void setupSystem()
 
 void runSystem()
 {
-    int valorPot = readPotentiometer(); // Lee el valor del potenciómetro
-    int angulo = getServoAngle();       // Convertir a PWM (0-180)
+    int angulo = getServoAngle(); // Convertir a PWM (0-180)
     float temperature = getTemperature();
     float humidity = getHumidity();
 
