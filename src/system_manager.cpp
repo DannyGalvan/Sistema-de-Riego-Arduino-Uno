@@ -5,43 +5,43 @@
 #include "potentiometer_definitions.h"
 #include "pump_definitions.h"
 
-void setupSystem()
+void configurarSistema()
 {
     Serial.begin(9600);
-    setupPump();
-    setupPotentiometer();
-    setupServo();
-    setupLCD();
-    setupDHT();
+    configurarBomba();
+    configurarPotenciometro();
+    configurarServo();
+    configurarLCD();
+    configurarDHT();
 }
 
-void runSystem()
+void correrSistema()
 {
-    int angulo = getServoAngle(); // Convertir a PWM (0-180)
-    float temperature = getTemperature();
-    float humidity = getHumidity();
+    int angulo = obtenerAnguloServo(); // Convertir a GRADOS (0-180)
+    float temperatura = obtenerTemperatura();
+    float humedad = obtenerHumedad();
 
-    // Check if any reads failed and exit early (to try again).
-    if (isDHTReadFailed(temperature, humidity))
+    if (estaFallandoLecturaDHT(temperatura, humedad))
     {
-        Serial.println(F("Failed to read from DHT sensor!"));
+        Serial.println(F("Falla al leer Sensor DHT"));
         delay(2000);
         return;
     }
 
-    displayHumidity(humidity);
-    displayTemperature(temperature);
+    mostrarHumedad(humedad);
+    mostrarTemperatura(temperatura);
 
-    if (isPumpNeeded(humidity))
+    if (esBombaNecesaria(humedad))
     {
-        turnPumpOn();
+        encenderBomba();
+        moverServoAutomatico();
     }
     else
     {
-        turnPumpOff();
+        apagarBomba();
     }
 
-    moveServo(angulo);
+    moverServoMecanico(angulo);
 
     delay(2000);
 }

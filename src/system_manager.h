@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-void setupSystem();
-void runSystem();
+void configurarSistema();
+void correrSistema();
 
-#endif // SYSTEM_MANAGER_H
+#endif

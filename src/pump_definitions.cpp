@@ -1,23 +1,23 @@
 #include "pump_definitions.h"
 
-void setupPump()
+void configurarBomba()
 {
-    pinMode(PUMP_PIN, OUTPUT);
+    pinMode(PIN_BOMBA, OUTPUT);
 }
 
-void turnPumpOn()
+void encenderBomba()
 {
-    digitalWrite(PUMP_PIN, HIGH);
+    digitalWrite(PIN_BOMBA, HIGH);
     Serial.println(F("Bomba Encendida"));
 }
 
-void turnPumpOff()
+void apagarBomba()
 {
-    digitalWrite(PUMP_PIN, LOW);
+    digitalWrite(PIN_BOMBA, LOW);
     Serial.println(F("Bomba Apagada"));
 }
 
-bool isPumpNeeded(float humidity)
+bool esBombaNecesaria(float humedad)
 {
-    return (humidity >= 0 && humidity <= 30);
+    return (humedad >= 0 && humedad <= 30);
 }

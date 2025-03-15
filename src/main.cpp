@@ -3,10 +3,10 @@
 
 void setup()
 {
-  setupSystem();
+  configurarSistema();
 }
 
 void loop()
 {
-  runSystem();
+  correrSistema();
 }

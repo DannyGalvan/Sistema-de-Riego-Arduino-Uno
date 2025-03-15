@@ -4,14 +4,14 @@
 #include <Arduino.h>
 #include <LiquidCrystal_I2C.h>
 
-#define LCD_ADDRESS 0x27
-#define LCD_COLUMNS 16
-#define LCD_ROWS 2
+#define DIRECCION_LCD 0x27
+#define COLUMNAS_LCD 16
+#define FILAS_LCD 2
 
 extern LiquidCrystal_I2C lcd;
 
-void setupLCD();
-void displayTemperature(float temperature);
-void displayHumidity(float humidity);
+void configurarLCD();
+void mostrarTemperatura(float temperatura);
+void mostrarHumedad(float humedad);
 
-#endif // LCD_DEFINITIONS_H
+#endif

@@ -4,13 +4,16 @@
 #include <Arduino.h>
 #include <Servo.h>
 
-#define SERVO_PIN 9
-#define Min 500
-#define Max 2400
+#define PIN_SERVO_MECANICO 9
+#define PIN_SERVO_AUTOMATICO 10
+#define MIN 500
+#define MAX 2400
 
-extern Servo servo;
+extern Servo servo_mecanico;
+extern Servo servo_automatico;
 
-void setupServo();
-void moveServo(int angle);
+void configurarServo();
+void moverServoMecanico(int angulo);
+void moverServoAutomatico();
 
 #endif

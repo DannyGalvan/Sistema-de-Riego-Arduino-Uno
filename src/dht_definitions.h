@@ -4,14 +4,14 @@
 #include <Arduino.h>
 #include "DHT.h"
 
-#define DHTPIN 2
-#define DHTTYPE DHT22 // DHT 22 (AM2302), AM2321
+#define PIN_DHT 2
+#define TIPO_DHT DHT22
 
 extern DHT dht;
 
-void setupDHT();
-float getTemperature();
-float getHumidity();
-bool isDHTReadFailed(float temperature, float humidity);
+void configurarDHT();
+float obtenerTemperatura();
+float obtenerHumedad();
+bool estaFallandoLecturaDHT(float temperatura, float humedad);
 
-#endif // DHT_DEFINITIONS_H
+#endif

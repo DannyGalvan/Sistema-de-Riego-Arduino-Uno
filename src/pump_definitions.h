@@ -3,11 +3,11 @@
 
 #include <Arduino.h>
 
-#define PUMP_PIN 8
+#define PIN_BOMBA 8
 
-void setupPump();
-void turnPumpOn();
-void turnPumpOff();
-bool isPumpNeeded(float humidity);
+void configurarBomba();
+void encenderBomba();
+void apagarBomba();
+bool esBombaNecesaria(float humedad);
 
-#endif // PUMP_DEFINITIONS_H
+#endif

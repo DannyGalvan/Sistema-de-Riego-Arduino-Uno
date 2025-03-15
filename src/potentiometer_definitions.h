@@ -5,8 +5,8 @@
 
 #define POT_PIN A0
 
-void setupPotentiometer();
-int readPotentiometer();
-int getServoAngle();
+void configurarPotenciometro();
+int leerPotenciometro();
+int obtenerAnguloServo();
 
-#endif // POTENTIOMETER_DEFINITIONS_H
+#endif

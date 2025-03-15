@@ -1,17 +1,17 @@
 #include "potentiometer_definitions.h"
 
-void setupPotentiometer()
+void configurarPotenciometro()
 {
     pinMode(POT_PIN, INPUT);
 }
 
-int readPotentiometer()
+int leerPotenciometro()
 {
     return analogRead(POT_PIN);
 }
 
-int getServoAngle()
+int obtenerAnguloServo()
 {
-    int value = readPotentiometer();
+    int value = leerPotenciometro();
     return map(value, 0, 1023, 0, 180); // Convertir a rango de ángulo del servo
 }

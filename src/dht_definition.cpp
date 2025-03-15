@@ -2,24 +2,24 @@
 #include "DHT.h"
 #include "dht_definitions.h"
 
-DHT dht(DHTPIN, DHTTYPE);
+DHT dht(PIN_DHT, TIPO_DHT);
 
-void setupDHT()
+void configurarDHT()
 {
     dht.begin();
 }
 
-float getTemperature()
+float obtenerTemperatura()
 {
     return dht.readTemperature();
 }
 
-float getHumidity()
+float obtenerHumedad()
 {
     return dht.readHumidity();
 }
 
-bool isDHTReadFailed(float temperature, float humidity)
+bool estaFallandoLecturaDHT(float temperatura, float humedad)
 {
-    return isnan(temperature) || isnan(humidity);
+    return isnan(temperatura) || isnan(humedad);
 }
